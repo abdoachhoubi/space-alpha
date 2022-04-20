@@ -1,0 +1,70 @@
+main
+    background-color: #0A0A0A
+    width: 100%
+    padding: 12px
+    display: flex
+    flex-direction: column
+
+.main-heading
+    font-size: 32px
+    margin: 24px 12px
+
+.main
+    padding: 12px
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 24px
+    grid-template-rows: auto
+
+@media screen and (max-width: 600px)
+    .main
+        grid-template-columns: 1fr
+
+.main-btn
+    background-color: #fff
+    width: fit-content
+    margin-top: 24px
+    padding: 16px 80px
+    color: #0a0a0a
+    border-radius: 8px
+    border: none
+    align-self: center
+    font-weight: 700
+    cursor: pointer
+
+.card
+    width: 100%
+    background-color: #0a0a0a
+    overflow: hidden
+    border-radius: 8px
+    border: 2px solid #ffffff
+
+.card-cover
+    height: 200px
+    width: 100%
+    background-image: url(https://source.unsplash.com/dCgbRAQmTQA)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.card-content
+    height: 240px
+    padding: 18px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.card-heading
+    font-size: 22px
+    margin-bottom: 10px
+
+.card-description
+    font-size: 14px
+    margin-top: 8px
+
+.card-url
+    font-size: 12px
+    color: #ffffff
+    cursor: pointer
+    font-family: $font

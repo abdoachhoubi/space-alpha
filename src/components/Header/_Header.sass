@@ -1,0 +1,65 @@
+header
+    width: 100%
+    height: 80vh
+    background: url(https://source.unsplash.com/dCgbRAQmTQA)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: top
+
+.container
+    padding: 0 24px
+    background-color: rgba(0, 0, 0, 0.7)
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.heading
+    font-size: 64px
+    width: 100%
+    text-align: center
+
+.sub-heading
+    font-weight: 600
+    font-size: 24px
+    width: 60%
+    text-align: center
+    margin-top: 16px
+    margin-bottom: 32px
+
+.btn
+    cursor: pointer
+    animation-name: uptown
+    animation-duration: 1500ms
+    animation-iteration-count: infinite
+
+@keyframes uptown 
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(30px)
+    100%
+        transform: translateY(0)
+
+@media screen and (max-width: 600px)
+    header
+        height: 60vh
+    .heading
+        font-size: 30px
+
+    .sub-heading
+        font-weight: 500
+        width: 80%
+        font-size: 14px
+        margin-top: 8px
+        margin-bottom: 16px
+
+    @keyframes uptown 
+        0%
+            transform: translateY(0)
+        50%
+            transform: translateY(20px)
+        100%
+            transform: translateY(0)
