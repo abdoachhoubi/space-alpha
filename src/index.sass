@@ -6,10 +6,18 @@ $font: 'Sora', sans-serif
     margin: 0
     box-sizing: border-box
     scroll-behavior: smooth
+    body::-webkit-scrollbar 
+      width: 16px
+    body::-webkit-scrollbar-track 
+      background-color: #212121
+    body::-webkit-scrollbar-thumb 
+      background-color: #FFFFFF
+    
 
 body
     width: 100%
     overflow-x: hidden
+    background-color: #0A0A0A
 
 h1, p, h2, button
     color: #ffffff
@@ -20,3 +28,4 @@ img
 
 @import "./components/Header/_Header"
 @import "./components/Main/_Main"
+@import "./components/Footer/_Footer"
