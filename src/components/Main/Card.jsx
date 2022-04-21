@@ -1,43 +1,24 @@
 import React, { useState } from "react";
-import { Minus } from "react-feather";
+import Cover from "./Cover";
 
 const Card = ({ data }) => {
-  let [src, setSrc] = useState("https://source.unsplash.com/dCgbRAQmTQA");
-
+  // States
   let [cover, setCover] = useState(
-    <div className="card-cover">
-      <div className="cloader">
-        <Minus color="#FFFFFF" size={30} />
-      </div>
-    </div>
+    <Cover src="https://source.unsplash.com/dCgbRAQmTQA" />
   );
 
+  // Checking if the image exists in the current url
   const img = new Image();
   img.src = data.imageUrl;
-
   img.addEventListener("load", () => {
-    setSrc(data.imageUrl);
-    setCover(
-      <div
-        className="card-cover"
-        style={{
-          backgroundImage: `url(${src})`,
-        }}
-      ></div>
-    );
+    setCover(<Cover src={data.imageUrl} />);
+  });
+  img.addEventListener("error", () => {
+    setCover(<Cover src="https://source.unsplash.com/dCgbRAQmTQA" />);
   });
 
-  img.addEventListener("error", () => {
-    setSrc("https://source.unsplash.com/dCgbRAQmTQA");
-    setCover(
-      <div
-        className="card-cover"
-        style={{
-          backgroundImage: `url(${src})`,
-        }}
-      ></div>
-    );
-  });
+  // Clearing The console becaause of the Network Errors
+  console.clear();
 
   return (
     <div className="card">
