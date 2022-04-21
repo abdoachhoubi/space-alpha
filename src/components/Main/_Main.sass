@@ -68,3 +68,23 @@ main
     color: #ffffff
     cursor: pointer
     font-family: $font
+
+.loader
+    align-self: center
+    margin-top: 32px
+    transform: translate(-20px, 0)
+    animation-name: load
+    animation-duration: 1500ms
+    animation-fill-mode: ease-in-out
+    animation-iteration-count: infinite
+
+@keyframes load
+    0%
+        transform: translate(-20px, 0)
+    50%
+       transform: translate(20px, 0)
+    100%
+        transform: translate(-20px, 0)
+
+.hidden
+    display: none
