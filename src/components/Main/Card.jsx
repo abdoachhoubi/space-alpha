@@ -19,7 +19,7 @@ const Card = ({ data }) => {
       <div className="card-content">
         <div className="card-content-preview">
           <h2 className="card-heading">{data.title}</h2>
-          <p className="card-description">{data.summary.substr(0, 120)}...</p>
+          <p className="card-description">{data.summary.substr(0, 140)}...</p>
         </div>
         <a
           href={data.url}

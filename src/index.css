@@ -196,6 +196,7 @@ main {
   .main {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    padding: 4px;
   }
 }
 
@@ -234,7 +235,7 @@ main {
 }
 
 .card-content {
-  height: 240px;
+  height: 270px;
   padding: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -259,10 +260,12 @@ main {
 }
 
 .card-url {
-  font-size: 12px;
+  font-size: 14px;
   color: #ffffff;
   cursor: pointer;
   font-family: "Sora", sans-serif;
+  width: 100%;
+  text-align: right;
 }
 
 .loader {
