@@ -1,21 +1,47 @@
 import React, { useState } from "react";
+import { Minus } from "react-feather";
 
 const Card = ({ data }) => {
   let [src, setSrc] = useState("https://source.unsplash.com/dCgbRAQmTQA");
+
+  let [cover, setCover] = useState(
+    <div className="card-cover">
+      <div className="cloader">
+        <Minus color="#FFFFFF" size={30} />
+      </div>
+    </div>
+  );
+
   const img = new Image();
   img.src = data.imageUrl;
-  img.onload = () => {
-    setSrc(data.imageUrl);
-  };
 
-  return (
-    <div className="card">
+  img.addEventListener("load", () => {
+    setSrc(data.imageUrl);
+    setCover(
       <div
         className="card-cover"
         style={{
           backgroundImage: `url(${src})`,
         }}
       ></div>
+    );
+  });
+
+  img.addEventListener("error", () => {
+    setSrc("https://source.unsplash.com/dCgbRAQmTQA");
+    setCover(
+      <div
+        className="card-cover"
+        style={{
+          backgroundImage: `url(${src})`,
+        }}
+      ></div>
+    );
+  });
+
+  return (
+    <div className="card">
+      {cover}
       <div className="card-content">
         <div className="card-content-preview">
           <h2 className="card-heading">{data.title}</h2>
